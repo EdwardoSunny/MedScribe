@@ -1,2 +1,11 @@
-def get_rag_response(user_prompt, img=None):
-    print("hello")
+import os
+import sys
+import bs4
+from langchain import hub
+from langchain_community.document_loaders import WebBaseLoader
+from langchain_chroma import Chroma
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.runnables import RunnablePassthrough
+from langchain_openai import OpenAIEmbeddings
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+
