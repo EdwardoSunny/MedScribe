@@ -153,7 +153,7 @@ if __name__ == "__main__":
     while True:
         user = input(">")
         if (user[0] == '$'):
-            print(bot.get_response(user.split(", ")[1:]))
+            print(bot.get_response(user.split(", ")[0][1:0]))
             print(os.path.join(DATA_PATH, user.split(", ")[1]))
             # print(bot.get_response(user.split(", ")[1:], os.path.join(DATA_PATH, user.split(", ")[1])))
         # else:
