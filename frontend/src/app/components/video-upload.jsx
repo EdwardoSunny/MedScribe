@@ -24,7 +24,7 @@ export default function VideoInput(props) {
         className="VideoInput_input"
         type="file"
         onChange={handleFileChange}
-        accept=".mov,.mp4"
+        accept=".mp4"
       />
       {!source && <button onClick={handleChoose}>Choose</button>}
       {source && (
