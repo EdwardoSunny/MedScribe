@@ -7,7 +7,7 @@ import Link from "next/link";
 export function NavbarWrapper() {
   return (
     <div className="relative w-full flex items-center justify-center">
-      <Navbar className="top-2" />
+      <Navbar className="top-2 shadow-[#005587] rounded-3xl shadow-lg" />
     </div>
   );
 }

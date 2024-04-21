@@ -10,13 +10,16 @@
   },
   "dependencies": {
     "@tabler/icons-react": "^3.2.0",
+    "ai": "^3.0.24",
     "clsx": "^2.1.0",
     "framer-motion": "^11.1.7",
     "mini-svg-data-uri": "^1.4.4",
     "next": "^14.2.2",
+    "openai-edge": "^1.2.2",
     "react": "^18",
     "react-dom": "^18",
     "react-router-dom": "^6.22.3",
+    "react-textarea-autosize": "^8.5.3",
     "react-typed": "^2.0.12",
     "tailwind-merge": "^2.3.0"
   },

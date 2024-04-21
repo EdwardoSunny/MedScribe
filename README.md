@@ -1,2 +1,0 @@
-# Herpes Checker
-check herpes
