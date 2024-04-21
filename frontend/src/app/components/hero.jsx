@@ -1,14 +1,28 @@
 "use client";
 import { motion } from "framer-motion";
 import { HeroHighlight, Highlight } from "./hero-highlight";
+import Image from 'next/image'
+import Logo from "../assets/logo.png"
 
 export function Hero() {
   return (
-    <div className="">
+    <div className="flex items-center justify-center">
       <HeroHighlight>
+      <div className="flex items-center justify-center w-full">
+        <Image
+          src={Logo}
+          alt="Hero"
+          layout="fixed"
+          width={300}
+          height={300}
+        />
+      </div>
+
         <h1 className="text-4xl px-4 md:text-6xl lg:text-8xl font-bold md:py-6 italic">
           MedScribe.
         </h1>
+      
+      
         <motion.h1
           initial={{
             opacity: 0,
@@ -31,6 +45,7 @@ export function Hero() {
           for your doctor visits.
         </motion.h1>
       </HeroHighlight>
+
     </div>
   );
 }
