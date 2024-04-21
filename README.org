@@ -5,14 +5,14 @@ Tired of long doctor's visits? Introducing MedScribe! Answer your post-visit que
 MedScribe revolutionizes the patient experience by enabling patients to chat with recordings of their doctor visits. This allows patients to fully process a doctor's instructions with additional medical knowledge, takes the some of burden off of the doctor's shoulders, and breaks down geographical barriers for rural patients seeking healthcare. As a real doctor who sees, hear, and read, we utilize the power of multimodal large language models and audio embeddings to process text databases, audio recordings, and image inputs from a patient's visit to get the full picture of a patient's condition.
 
 ** How to use it?
-[[./images/home.png]]
-Simply upload a video of your visit, our chatbot will automatically ingest the video and understand what happened at your last visit.
 [[./images/upload.png]]
+Simply upload a video of your visit, our chatbot will automatically ingest the video and understand what happened at your last visit.
+[[./images/chat.png]]
 Combined with our AI's knowledge of healthcare, you can have a conversation regarding your condition and even upload images to chat about your concerns.
 
 ** How does it work?
 *** Backend
-[[./images/chat.png]]
+[[./images/chatempty.png]]
 We utilize GPT-4 Vision and OpenAI Whisper to embed images, text, and audio clips into our vector databases, which then is used for chatting with our healthcare informed chatbot use retrieval augmented generation (RAG).
 
 *** Frontend
