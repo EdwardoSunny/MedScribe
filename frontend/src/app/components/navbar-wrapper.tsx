@@ -2,8 +2,7 @@
 import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "./navbar-menu";
 import { cn } from "../utils/cn";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export function NavbarWrapper() {
   return (
@@ -20,21 +19,23 @@ function Navbar({ className }: { className?: string }) {
       className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
     >
       <Menu setActive={setActive}>
-        <Link to="/" className="hover:underline">
+        <Link href="/">
           <MenuItem setActive={setActive} active={active} item="Home">
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="/web-dev">Go home!</HoveredLink>
             </div>
           </MenuItem>
         </Link>
-        <Link to="/profile" className="hover:underline">
+
+        <Link href="/pages/profile">
           <MenuItem setActive={setActive} active={active} item="Profile">
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="/web-dev">Upload your visit!</HoveredLink>
             </div>
           </MenuItem>
         </Link>
-        <Link to="/summary" className="hover:underline">
+
+        <Link href="/pages/summary">
           <MenuItem setActive={setActive} active={active} item="Summary">
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="/web-dev">
@@ -43,7 +44,8 @@ function Navbar({ className }: { className?: string }) {
             </div>
           </MenuItem>
         </Link>
-        <Link to="/chat" className="hover:underline">
+
+        <Link href="/pages/chat">
           <MenuItem setActive={setActive} active={active} item="Chat">
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="/web-dev">Chat with our AI!</HoveredLink>

@@ -1,6 +1,7 @@
+"use client";
 import React from "react";
-import VideoInput from "../components/video-upload";
-import { NavbarWrapper } from "../components/navbar-wrapper";
+import VideoInput from "../../components/video-upload";
+import { NavbarWrapper } from "../../components/navbar-wrapper";
 
 export default function Profile() {
   return (
