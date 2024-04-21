@@ -17,4 +17,5 @@ except IOError:
     print("Error: Unable to read or write the files.")
     
 except Exception as e:
-    prin
+    print("An unexpected error occurred:", e)
+
