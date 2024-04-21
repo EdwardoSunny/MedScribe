@@ -1,7 +1,8 @@
 import os
+import json
 from openai import OpenAI
 
-os.environ["OPENAI_API_KEY"]
+os.environ["OPENAI_API_KEY"] #set up OpenAI API key
 
 client = OpenAI()
 
@@ -13,4 +14,8 @@ transcript = client.audio.transcriptions.create(
   timestamp_granularities=["word"]
 )
 
-print(transcript.words)
+audio_file.close();
+
+
+for word_info in transcript.words:
+    print(word_info['word'])
