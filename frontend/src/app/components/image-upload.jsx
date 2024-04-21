@@ -3,7 +3,7 @@ const paragraphStyle = {
   position: 'fixed',
   top: '50%',
   left: '50%',
-  transform: 'translate(-50%, -50%)',
+  transform: 'translate(-110%, -50%)',
 };
 export default function VideoInput(props) {
   const { width, height } = props;
@@ -12,29 +12,10 @@ export default function VideoInput(props) {
 
   const [source, setSource] = React.useState();
 
-  const handleFileChange = async (event) => {
+  const handleFileChange = (event) => {
     const file = event.target.files[0];
     const url = URL.createObjectURL(file);
     setSource(url);
-
-      const formData = new FormData();
-    formData.append("video", file);
-
-    try {
-      const response = await fetch("http://localhost:8000/upload-video", {
-        method: "POST",
-        body: formData,
-      });
-      if (response.ok) {
-        console.log("File uploaded successfully");
-        setUploaded(true);
-      } else {
-        console.error("Failed to upload file");
-      }
-    } catch (error) {
-      console.error("Error uploading file:", error);
-    }
-
   };
 
   const handleChoose = (event) => {
@@ -46,14 +27,14 @@ export default function VideoInput(props) {
   
       <input
         ref={inputRef}
-        className="VideoInput_input"
+        
         type="file"
         onChange={handleFileChange}
-        accept=".mp4"
+        accept=".jpeg,.png"
       />
       
       {source && (
-        <video
+        <image
           className="VideoInput_video"
           width="100%"
           height={height}
