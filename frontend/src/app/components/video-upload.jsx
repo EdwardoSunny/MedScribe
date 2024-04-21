@@ -36,7 +36,10 @@ export default function VideoInput(props) {
     }
 
   };
-
+  function prompt(){
+    if(source) return "Great! Navigate to the summary page to review the important points of your visit or the chat page for any questions.";
+    return "Please upload the video of your doctors visit";
+  }
   const handleChoose = (event) => {
     inputRef.current.click();
   };
@@ -61,7 +64,7 @@ export default function VideoInput(props) {
           src={source}
         />
       )}
-      <div className="VideoInput_footer">{source || "Nothing selected"}</div>
+      <div className="VideoInput_footer">{prompt()}</div>
     </div>
   );
 }

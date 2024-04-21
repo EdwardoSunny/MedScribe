@@ -5,6 +5,7 @@ const paragraphStyle = {
     top: '50%', /* halfway down the screen */
     transform: 'translateY(-50%)',
 };
+
 export default function VideoInput(props) {
   const { width, height } = props;
 
@@ -17,11 +18,14 @@ export default function VideoInput(props) {
     const url = URL.createObjectURL(file);
     setSource(url);
   };
-
+  function prompt(){
+    if(source) return "Great! Feel free to upload any other relevant images";
+    return "please upload any images";
+  }
   const handleChoose = (event) => {
     inputRef.current.click();
   };
-
+  
   return (
     <div style={paragraphStyle}>
   
@@ -42,7 +46,7 @@ export default function VideoInput(props) {
           src={source}
         />
       )}
-      <div className="VideoInput_footer">{source || "Nothing selected"}</div>
+      <div className="VideoInput_footer">{prompt()}</div>
     </div>
   );
 }
