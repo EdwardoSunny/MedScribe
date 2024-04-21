@@ -55,31 +55,46 @@ export default function VideoInput(props) {
   };
 
   return (
-    <div style={paragraphStyle}>      
+    <div className="text-xl">      
       {uploaded && source ? (
         <>
+        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black rounded-3xl p-5 inline-block w-100 h-auto">
         <video
-          className="rounded-xl"
+          className=""
           width="100%"
           height={height}
           controls
           src={source}
         />
-      <div className="VideoInput_footer">{prompt()}</div>
+      <div className="font-bold">{prompt()}</div>
+      </div>
         </>
       ) : !uploaded && source ? (
+        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-lg p-5 inline-block">
         <Circles />
+        </div>
       ) : (
         <>
-  <input
+  {/* <input
         ref={inputRef}
-        className="rounded-lg"
+        className="rounded-lg hidden"
         type="file"
         onChange={handleFileChange}
         accept=".mp4"
-      />
-      <div className="VideoInput_footer">{prompt()}</div>
-
+      /> */}
+    <div className="flex flex-col items-center justify-center fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black rounded-3xl p-5 inline-block">
+      <label className="bg-white text-black font-bold px-4 py-2 cursor-pointer rounded-lg">
+          Upload File
+          <input
+            ref={inputRef}
+            className="hidden"
+            type="file"
+            onChange={handleFileChange}
+            accept=".mp4"
+          />
+        </label>
+      <div className="p-5">{prompt()}</div>
+</div>
 </>
       )}
     </div>
