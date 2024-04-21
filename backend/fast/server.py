@@ -20,6 +20,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+class ChatInput(BaseModel):
+    message: str
 
 @app.post("/chat/")
 async def generate_response(chat_input: ChatInput):
