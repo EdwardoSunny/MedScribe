@@ -23,20 +23,20 @@ function Navbar({ className }: { className?: string }) {
         <Link to="/" className="hover:underline">
           <MenuItem setActive={setActive} active={active} item="Home">
             <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/web-dev">Web Development</HoveredLink>
+              <HoveredLink href="/web-dev">Go home!</HoveredLink>
             </div>
           </MenuItem>
         </Link>
         <Link to="/profile" className="hover:underline">
           <MenuItem setActive={setActive} active={active} item="Profile">
             <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/web-dev">Web Development</HoveredLink>
+              <HoveredLink href="/web-dev">Upload your visit!</HoveredLink>
             </div>
           </MenuItem>
         </Link>
         <MenuItem setActive={setActive} active={active} item="Chat">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/web-dev">Web Development</HoveredLink>
+            <HoveredLink href="/web-dev">Chat with our AI!</HoveredLink>
           </div>
         </MenuItem>
       </Menu>
