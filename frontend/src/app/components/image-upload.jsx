@@ -2,7 +2,7 @@ import React from "react";
 const paragraphStyle = {
   position: 'fixed',
   top: '50%',
-  left: '50%',
+  left: '20%',
   transform: 'translate(-50%, -50%)',
 };
 
