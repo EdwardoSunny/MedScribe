@@ -1,9 +1,9 @@
 import React from "react";
 const paragraphStyle = {
   position: 'fixed',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-110%, -50%)',
+    left: '20%',/* 1/4th of the way from the left */
+    top: '50%', /* halfway down the screen */
+    transform: 'translateY(-50%)',
 };
 export default function VideoInput(props) {
   const { width, height } = props;
