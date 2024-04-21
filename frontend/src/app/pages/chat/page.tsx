@@ -92,7 +92,7 @@ export default function Chat() {
 
             <form
               onSubmit={handleSubmit}
-              className="p-5 fixed bottom-0 left-0 w-[75%] mx-auto right-0 bg-neutral-1000"
+              className="p-5 fixed bottom-0 w-[50%] mx-auto right-0 bg-neutral-1000"
               // p-5 fixed bottom-0 left-0 w-[75%] mx-auto right-0 bg-neutral-1000
             >
               <div className="relative flex items-center">
