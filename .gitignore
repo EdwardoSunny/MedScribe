@@ -1,2 +1,5 @@
 env/
 data/
+node_modules/
+__pycache__
+.DS_Store
