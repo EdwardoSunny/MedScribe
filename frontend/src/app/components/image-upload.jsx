@@ -49,23 +49,25 @@ export default function VideoInput(props) {
   };
 
   return (
-    
-    <div className="text-xl">      
-      <div className="fixed top-1/3 left-1/4 transform -translate-x-1/2 -translate-y-1/4 bg-black rounded-3xl p-5 inline-block w-100 h-auto">
+      <div className="text-xl flex flex-col items-center justify-center h-screen">      
+      {source ? (
+        <>
+        <div className="flex flex-col items-center justify-center ">
         <img
-          className=""
-          width="100%"
+          className="w-1/2 h-auto rounded-xl"
           height={height}
           controls
           src={source}
         />
-      
+      <div className="font-bold p-10">{prompt()}</div>
       </div>
-      <div className="flex flex-col items-center justify-center fixed top-1/2 left-1/4 transform -translate-x-1/2 -translate-y-1/2 bg-black rounded-3xl p-5 inline-block">
-        {!source ?(<>
+        </>
+      ) : (
+        <>
+    <div className="flex flex-col items-center justify-center">
       <label className="bg-white text-black font-bold px-4 py-2 cursor-pointer rounded-lg">
           Upload File
-          <input 
+          <input
             ref={inputRef}
             className="hidden"
             type="file"
@@ -74,22 +76,10 @@ export default function VideoInput(props) {
           />
         </label>
       <div className="p-5">{prompt()}</div>
-      </>):
-      (<></>)
-    }
 </div>
-        <>
-  {/* <input
-        ref={inputRef}
-        className="rounded-lg hidden"
-        type="file"
-        onChange={handleFileChange}
-        accept=".mp4"
-      /> */}
-    
-      </>
-            
-          </div>
+</>
+      )}
+    </div>
         );
-      }
+}
       
