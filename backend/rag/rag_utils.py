@@ -112,7 +112,7 @@ class ChatBot:
                 "content": [
                 {
                     "type": "text",
-                    "text": "Explain medically what is wrong this image. DO NOT WRITE ANYTHING ELSE." 
+                    "text": "Explain medically what is wrong this image and what possible conditions may exist. DO NOT WRITE ANYTHING ELSE." 
                 },
                 {
                     "type": "image_url",
@@ -152,9 +152,7 @@ if __name__ == "__main__":
     bot = ChatBot("transcript_1.txt")
     while True:
         user = input(">")
-        if (user[0] == '$'):
-            print(bot.get_response(user.split(", ")[0][1:0]))
-            print(os.path.join(DATA_PATH, user.split(", ")[1]))
-            # print(bot.get_response(user.split(", ")[1:], os.path.join(DATA_PATH, user.split(", ")[1])))
-        # else:
-            # print(bot.get_response(user))
+        if (user[0] == '$'): 
+            print(bot.get_response(user.split(", ")[0][1:], img_path=os.path.join(DATA_PATH, user.split(", ")[1])))
+        else:
+            print(bot.get_response(user))
