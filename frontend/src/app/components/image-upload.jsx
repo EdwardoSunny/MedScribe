@@ -20,7 +20,7 @@ export default function VideoInput(props) {
     setSource(url);
 
       const formData = new FormData();
-    formData.append("video", file);
+    formData.append("image", file);
 
     try {
       const response = await fetch("http://localhost:8000/upload-image", {

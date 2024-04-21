@@ -39,10 +39,11 @@ async def get_chat_initialized():
 
 @app.post("/chat/")
 async def generate_response(chat_input: ChatInput):
+    image_path = os.path.join(DATA_PATH, "images", "img_1.jpg") #saves vid file
     global c
     response = ""
-    if (image_uploaded and type(c) != str):
-        response = c.get_response(chat_input.message, img_path=os.path.join(DATA_PATH, "img_1.jpg"))
+    if (os.path.exists(image_path) and type(c) != str):
+        response = c.get_response(chat_input.message, img_path=image_path)
     elif (type(c) != str):
         response = c.get_response(chat_input.message)
     return {"message": response}
@@ -57,9 +58,7 @@ async def upload_video(video: UploadFile = File(...)):
         global c
         convert_mp4_to_mp3()
         get_transcript()
-        print("ONE BALLS")
         if (type(c) == str):
-            print("FIXED")
             c = ChatBot("transcript_1.txt")
             global chat_initalized
             chat_initalized = True
@@ -70,7 +69,7 @@ async def upload_video(video: UploadFile = File(...)):
 
 @app.post("/upload-image/")
 async def upload_image(image: UploadFile = File(...)):
-    image_path = os.path.join(DATA_PATH, "videos", image.filename) #saves vid file
+    image_path = os.path.join(DATA_PATH, "images", "img_1.jpg") #saves vid file
     with open(image_path, "wb") as buffer:
         shutil.copyfileobj(image.file, buffer)
 	# Check if the file exists after saving
@@ -84,7 +83,6 @@ async def upload_image(image: UploadFile = File(...)):
 @app.get("/summary/")
 async def summary():
     global c
-    print(type(c))
     if (type(c) != str):
         return {"summary": c.get_response("Summarize my most recent doctor's visit in bullet points, make sure to put returns in the right locations. I am the patient.")}
     else:
