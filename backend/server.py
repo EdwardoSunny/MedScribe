@@ -14,7 +14,7 @@ app = FastAPI()
 global chat_initalized, image_uploaded 
 chat_initalized = False
 image_uploaded = False
-DATA_PATH = os.path.dirname("../data/")
+DATA_PATH = os.path.dirname("./data/")
 c = "" 
 
 class ChatInput(BaseModel):
@@ -56,10 +56,10 @@ async def upload_video(video: UploadFile = File(...)):
 
     if os.path.exists(video_path):
         global c
-        convert_mp4_to_mp3()
-        get_transcript()
+        convert_mp4_to_mp3(DATA_PATH)
+        get_transcript(DATA_PATH)
         if (type(c) == str):
-            c = ChatBot("transcript_1.txt")
+            c = ChatBot("transcript_1.txt", DATA_PATH)
             global chat_initalized
             chat_initalized = True
     if os.path.exists(video_path):

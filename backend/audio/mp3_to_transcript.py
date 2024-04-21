@@ -4,11 +4,10 @@ from openai import OpenAI
 
 os.environ["OPENAI_API_KEY"] #set up OpenAI API key
 
-DATA_PATH = os.path.dirname("../data/")
 
 client = OpenAI()
 
-def get_transcript():
+def get_transcript(DATA_PATH):
   # Load the audio file
     
   # Create a transcript of the audio file transcript

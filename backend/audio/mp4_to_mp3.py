@@ -1,9 +1,8 @@
 import os
 from moviepy.editor import *
 
-DATA_PATH = os.path.dirname("../data/")
 
-def convert_mp4_to_mp3():
+def convert_mp4_to_mp3(DATA_PATH):
     try:
         # Load the mp4 file
         video = VideoFileClip(os.path.join(DATA_PATH, "videos", "recording_1.mp4"))

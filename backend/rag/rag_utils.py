@@ -21,13 +21,12 @@ from langchain_core.chat_history import BaseChatMessageHistory
 from langchain_core.runnables.history import RunnableWithMessageHistory
 
 OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
-DATA_PATH = os.path.dirname("../data/")
 LLM_MODEL_NAME = "gpt-3.5-turbo"
 LLM_TEMP = 0.7
 
 
 class ChatBot:
-    def __init__(self, transcript_name):
+    def __init__(self, transcript_name, DATA_PATH):
         self.vision_client = OpenAI()
         self.loader = TextLoader(os.path.join(DATA_PATH, transcript_name))
         self.docs = self.loader.load()
