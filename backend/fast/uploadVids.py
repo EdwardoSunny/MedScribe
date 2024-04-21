@@ -5,7 +5,7 @@ app = FastAPI()
 
 @app.post("/upload-video")
 async def upload_video(video: UploadFile = File(...)):
-    video_path = f"./videos/{video.filename}" #saves vid file
+    video_path = f"../data/videos/{video.filename}" #saves vid file
     with open(video_path, "wb") as buffer:
         shutil.copyfileobj(video.file, buffer)
   

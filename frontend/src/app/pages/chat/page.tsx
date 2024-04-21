@@ -1,13 +1,15 @@
 "use client";
 
 import { NavbarWrapper } from "../../components/navbar-wrapper";
-import { useChat } from "ai/react";
+import {useChat} from "../../hooks/useChat";
 import { useEffect, useRef } from "react";
 import Textarea from "react-textarea-autosize";
 import ImageUpload from "../../components/image-upload";
+
+
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit } = useChat({
-    api: "/api",
+    api: "http://localhost:8000/chat",
   });
 
   const messageEndRef = useRef<HTMLInputElement>(null);
