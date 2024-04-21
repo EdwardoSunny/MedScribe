@@ -38,7 +38,7 @@ export default function VideoInput(props) {
       />
       
       {source && (
-        <im
+        <img
           width="30%"
           height={height}
           title=""
