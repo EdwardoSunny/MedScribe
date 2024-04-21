@@ -9,10 +9,10 @@ export default function Profile() {
     <>
       <NavbarWrapper />
       <BackgroundGradientAnimation />
-      <div className="App">
-        <h1>Video upload</h1>
-        <VideoInput  />
-      </div>
+      <VideoInput  />
+      
+      
+      
     </>
   );
 }
