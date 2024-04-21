@@ -3,7 +3,7 @@ import { Circles } from 'react-loading-icons'
 const paragraphStyle = {
   position: 'fixed',
   top: '50%',
-  left: '20%',
+  left: '25%',
   transform: 'translate(-50%, -50%)', 
 };
 
@@ -50,7 +50,7 @@ export default function VideoInput(props) {
   };
 
   return (
-    <div style={paragraphStyle}>
+    <div className="text-center justify-center items-center p-5 rounded-3xl bg-gradient-to-r from-slate-200 to-slate-300" style={paragraphStyle}>
       
      
 
