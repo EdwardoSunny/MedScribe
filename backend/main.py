@@ -1,15 +1,25 @@
-from typing import Union
+from fastapi import FastAPI, File, UploadFile
+from tempfile import NamedTemporaryFile
+import os
 
-from fastapi import FastAPI
-
-app = FastAPI()
-
-
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
-
-
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
+@app.post("/video/upload-video")
+def upload_video(file: UploadFile = File(...)):
+    temp = NamedTemporaryFile(delete=False)
+    try:
+        try:
+            contents = file.file.read()
+            with temp as f:
+                f.write(contents);
+        except Exception:
+            return {"message": "There was an error uploading the file"}
+        finally:
+            file.file.close()
+        
+        res = process_video(temp.name)  # Pass temp.name to VideoCapture()
+    except Exception:
+        return {"message": "There was an error processing the file"}
+    finally:
+        #temp.close()  # the `with` statement above takes care of closing the file
+        os.remove(temp.name)
+        
+    return res
