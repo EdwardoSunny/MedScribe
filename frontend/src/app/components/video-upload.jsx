@@ -1,16 +1,6 @@
 import React from "react";
 import { Circles } from 'react-loading-icons'
 
-const paragraphStyle = {
-  position: 'fixed',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  backgroundColor: 'black',
-    borderRadius: '20px',
-    padding: '20px',
-    display: 'inline-block'
-};
 export default function VideoInput(props) {
   const { width, height } = props;
 
