@@ -5,7 +5,6 @@ const paragraphStyle = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
 };
-
 export default function VideoInput(props) {
   const { width, height } = props;
 
@@ -22,7 +21,7 @@ export default function VideoInput(props) {
     formData.append("video", file);
 
     try {
-      const response = await fetch("http://localhost:8000/upload-image", {
+      const response = await fetch("http://localhost:8000/upload-video", {
         method: "POST",
         body: formData,
       });
@@ -46,6 +45,11 @@ export default function VideoInput(props) {
   };
 
   return (
+    
+
+
+
+
     <div style={paragraphStyle}>
   
       <input
@@ -53,7 +57,7 @@ export default function VideoInput(props) {
         className="VideoInput_input"
         type="file"
         onChange={handleFileChange}
-        accept=".jpg"
+        accept=".mp4"
       />
       
       {source && (
@@ -61,7 +65,7 @@ export default function VideoInput(props) {
           className="VideoInput_video"
           width="100%"
           height={height}
-          title=""
+          controls
           src={source}
         />
       )}
@@ -69,4 +73,3 @@ export default function VideoInput(props) {
     </div>
   );
 }
-
