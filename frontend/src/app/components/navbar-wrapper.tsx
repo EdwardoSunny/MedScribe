@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "./navbar-menu";
 import { cn } from "../utils/cn";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export function NavbarWrapper() {
   return (
@@ -18,11 +20,13 @@ function Navbar({ className }: { className?: string }) {
       className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
     >
       <Menu setActive={setActive}>
-        <MenuItem setActive={setActive} active={active} item="Profile">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/web-dev">Web Development</HoveredLink>
-          </div>
-        </MenuItem>
+        <Link to="/profile" className="hover:underline">
+          <MenuItem setActive={setActive} active={active} item="Profile">
+            <div className="flex flex-col space-y-4 text-sm">
+              <HoveredLink href="/web-dev">Web Development</HoveredLink>
+            </div>
+          </MenuItem>
+        </Link>
         <MenuItem setActive={setActive} active={active} item="Chat">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/web-dev">Web Development</HoveredLink>
