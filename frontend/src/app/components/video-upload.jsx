@@ -48,8 +48,8 @@ export default function VideoInput(props) {
     <div style={paragraphStyle}>
   
       <input
-        ref={inputRef}
-        className="VideoInput_input"
+        title = "bro what"
+        
         type="file"
         onChange={handleFileChange}
         accept=".mp4"
