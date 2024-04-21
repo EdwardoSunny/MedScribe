@@ -4,7 +4,7 @@ import { NavbarWrapper } from "../../components/navbar-wrapper";
 import { useChat } from "ai/react";
 import { useEffect, useRef } from "react";
 import Textarea from "react-textarea-autosize";
-
+import ImageUpload from "../../components/image-upload";
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit } = useChat({
     api: "/api",
@@ -25,7 +25,7 @@ export default function Chat() {
       <NavbarWrapper />
       <div className="mx-auto grid md:grid-cols-2 sm:grid-col-1">
         <div>
-          <h1>image shit goes here</h1>
+          <ImageUpload />
         </div>
         <div>
           <div className="min-h-screen bg-neutral-1000 pt-40">
