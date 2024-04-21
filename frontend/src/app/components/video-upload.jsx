@@ -12,10 +12,29 @@ export default function VideoInput(props) {
 
   const [source, setSource] = React.useState();
 
-  const handleFileChange = (event) => {
+  const handleFileChange = async (event) => {
     const file = event.target.files[0];
     const url = URL.createObjectURL(file);
     setSource(url);
+
+      const formData = new FormData();
+    formData.append("video", file);
+
+    try {
+      const response = await fetch("http://localhost:8000/upload-video", {
+        method: "POST",
+        body: formData,
+      });
+      if (response.ok) {
+        console.log("File uploaded successfully");
+        setUploaded(true);
+      } else {
+        console.error("Failed to upload file");
+      }
+    } catch (error) {
+      console.error("Error uploading file:", error);
+    }
+
   };
 
   const handleChoose = (event) => {
