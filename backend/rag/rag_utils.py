@@ -146,9 +146,6 @@ class ChatBot:
         )["answer"]
     
 
-    def summary():
-        get_response("summary")
-        
 
 
 if __name__ == "__main__":

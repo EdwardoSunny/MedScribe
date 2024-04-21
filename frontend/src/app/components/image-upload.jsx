@@ -12,6 +12,7 @@ export default function VideoInput(props) {
   const inputRef = React.useRef();
 
   const [source, setSource] = React.useState();
+  const [uploaded, setUploaded] = React.useState(false);
 
   const handleFileChange = async (event) => {
     const file = event.target.files[0];
@@ -56,7 +57,7 @@ export default function VideoInput(props) {
         accept=".jpg"
       />
       
-      {source && (
+      {uploaded && source && (
         <video
           className="VideoInput_video"
           width="100%"
