@@ -1,6 +1,7 @@
 * MedScribe (LA Hacks 2024)
-Tired of long doctor's visits? Introducing MedScribe! Answer your post-visit questions in an instant!
+Checkout our [[https://devpost.com/software/medscribe-vp3qzi][Devpost!]]
 [[./images/home.png]]
+Tired of long doctor's visits? Introducing MedScribe! Answer your post-visit questions in an instant!
 ** What is MedScribe?
 MedScribe revolutionizes the patient experience by enabling patients to chat with recordings of their doctor visits. This allows patients to fully process a doctor's instructions with additional medical knowledge, takes the some of burden off of the doctor's shoulders, and breaks down geographical barriers for rural patients seeking healthcare. As a real doctor who sees, hear, and read, we utilize the power of multimodal large language models and audio embeddings to process text databases, audio recordings, and image inputs from a patient's visit to get the full picture of a patient's condition.
 
@@ -18,3 +19,11 @@ We utilize GPT-4 Vision and OpenAI Whisper to embed images, text, and audio clip
 *** Frontend
 [[./images/laptop.png]]
 The frontend is powered by NextJS and React to deliever a seemless user experience.
+
+** Try it!
+edit ~autogen.sh~ and replace the paths to the ~frontend~ and ~backend~ to your own paths on your machine. Then, simply run:
+#+NAME: demo
+#+BEGIN_SRC bash
+chmod +x autogen.sh
+./autogen.sh
+#+END_SRC
