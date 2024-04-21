@@ -10,9 +10,6 @@ export default function Profile() {
       <NavbarWrapper />
       <BackgroundGradientAnimation />
       <VideoInput  />
-      
-      
-      
     </>
   );
 }

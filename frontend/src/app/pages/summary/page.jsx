@@ -1,14 +1,16 @@
 "use client";
-
-import LaptopDemo from "../../components/laptop-demo";
+import React from "react";
+import Summary from "../../components/summary";
 import { NavbarWrapper } from "../../components/navbar-wrapper";
-import { Hero } from "../../components/hero";
+import { BackgroundGradientAnimation } from "../../components/background-gradient-animation";
 
-export default function Summary() {
+export default function Profile() {
   return (
     <>
       <NavbarWrapper />
-      <Hero />
+      <BackgroundGradientAnimation />
+      <Summary />
     </>
   );
 }
+
