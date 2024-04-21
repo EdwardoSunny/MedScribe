@@ -1,2 +1,2 @@
-# Herpes Checker
-check herpes
+# MedScribe
+LA Hacks 2024

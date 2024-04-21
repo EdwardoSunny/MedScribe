@@ -1,9 +1,10 @@
 import React from "react";
+import { Circles } from 'react-loading-icons'
 const paragraphStyle = {
   position: 'fixed',
   top: '50%',
   left: '20%',
-  transform: 'translate(-50%, -50%)',
+  transform: 'translate(-50%, -50%)', 
 };
 
 export default function VideoInput(props) {
@@ -12,8 +13,7 @@ export default function VideoInput(props) {
   const inputRef = React.useRef();
 
   const [source, setSource] = React.useState();
-  const [uploaded, setUploaded] = React.useState(false);
-
+  const [uploaded, setUploaded] = React.useState(false); // new state variable
   const handleFileChange = async (event) => {
     const file = event.target.files[0];
     const url = URL.createObjectURL(file);
@@ -38,9 +38,12 @@ export default function VideoInput(props) {
     }
 
   };
+  
+    
   function prompt(){
-    if(source) return "Great! Navigate to the summary page to review the important points of your visit or the chat page for any questions.";
-    return "Please upload the video of your doctors visit";
+    if(uploaded && source) return "Success!";
+    if (!uploaded && source) return "Loading..."
+    return "Upload any relevant pictures";
   }
   const handleChoose = (event) => {
     inputRef.current.click();
@@ -48,25 +51,38 @@ export default function VideoInput(props) {
 
   return (
     <div style={paragraphStyle}>
-  
-      <input
+      
+     
+
+
+      {uploaded && source ? (
+        <>
+        <img
+          className="rounded-xl"
+          width="100%"
+          height={height}
+          controls
+          src={source}
+        />
+      <div className="VideoInput_footer">{prompt()}</div>
+        </>
+      ) : !uploaded && source ? (
+        <Circles />
+      ) : (
+        <>
+  <input
         ref={inputRef}
         className="VideoInput_input"
         type="file"
         onChange={handleFileChange}
         accept=".jpg"
       />
-      
-      {uploaded && source && (
-        <video
-          className="VideoInput_video"
-          width="100%"
-          height={height}
-          title=""
-          src={source}
-        />
-      )}
       <div className="VideoInput_footer">{prompt()}</div>
+
+</>
+      )}
+
+
     </div>
   );
 }
