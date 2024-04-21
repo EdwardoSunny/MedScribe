@@ -144,6 +144,7 @@ class ChatBot:
                 "configurable": {"session_id": "abc123"}
             },  # constructs a key "abc123" in `store`.
         )["answer"]
+    
 
 
 
@@ -156,3 +157,5 @@ if __name__ == "__main__":
             print(bot.get_response(user.split(", ")[0][1:], img_path=os.path.join(DATA_PATH, user.split(", ")[1])))
         else:
             print(bot.get_response(user))
+
+

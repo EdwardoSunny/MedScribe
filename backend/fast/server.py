@@ -81,6 +81,9 @@ async def upload_image(image: UploadFile = File(...)):
         return {"filename": image.filename, "status": "Failed to save file"}
 
 
+@app.get("/summary/")
+async def summary():
+    return {"summary": c.get_response("Summarize my most recent doctor's visit in bullet points.")}
 
 if __name__  == '__main__':
      uvicorn.run("server:app", host="0.0.0.0", port=8000, reload=True)
