@@ -1,16 +1,27 @@
 "use client";
-
 import { NavbarWrapper } from "../../components/navbar-wrapper";
 import {useChat} from "../../hooks/useChat";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState} from "react";
 import Textarea from "react-textarea-autosize";
 import ImageUpload from "../../components/image-upload";
+import axios from "axios";
 
 
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit } = useChat({
     api: "http://localhost:8000/chat",
   });
+
+  const [isFormSubmittable, setIsFormSubmittable] = useState(false);
+
+    useEffect(() => {
+    const checkFormSubmittable = async () => {
+      const response = await axios.get("http://localhost:8000/chat-initialized"); // replace with fetch if you prefer
+      setIsFormSubmittable(response.data.data);
+    };
+
+    checkFormSubmittable();
+  }, []);
 
   const messageEndRef = useRef<HTMLInputElement>(null);
 
@@ -91,7 +102,6 @@ export default function Chat() {
             )}
 
             <div ref={messageEndRef}></div>
-
             <form
               onSubmit={handleSubmit}
               className="p-5 fixed bottom-0 w-[50%] mx-auto right-0 bg-neutral-1000"
@@ -112,6 +122,7 @@ export default function Chat() {
                 <button
                   type="submit"
                   className="absolute bg-black p-2 rounded-lg right-0 mr-5"
+                  disabled={!isFormSubmittable}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
