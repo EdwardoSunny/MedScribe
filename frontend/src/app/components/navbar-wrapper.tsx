@@ -34,11 +34,22 @@ function Navbar({ className }: { className?: string }) {
             </div>
           </MenuItem>
         </Link>
-        <MenuItem setActive={setActive} active={active} item="Chat">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/web-dev">Chat with our AI!</HoveredLink>
-          </div>
-        </MenuItem>
+        <Link to="/summary" className="hover:underline">
+          <MenuItem setActive={setActive} active={active} item="Summary">
+            <div className="flex flex-col space-y-4 text-sm">
+              <HoveredLink href="/web-dev">
+                See a summary of your visit!
+              </HoveredLink>
+            </div>
+          </MenuItem>
+        </Link>
+        <Link to="/chat" className="hover:underline">
+          <MenuItem setActive={setActive} active={active} item="Chat">
+            <div className="flex flex-col space-y-4 text-sm">
+              <HoveredLink href="/web-dev">Chat with our AI!</HoveredLink>
+            </div>
+          </MenuItem>
+        </Link>
       </Menu>
     </div>
   );
