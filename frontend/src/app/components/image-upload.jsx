@@ -38,11 +38,10 @@ export default function VideoInput(props) {
       />
       
       {source && (
-        <image
-          className="VideoInput_video"
-          width="100%"
+        <im
+          width="30%"
           height={height}
-          controls
+          title=""
           src={source}
         />
       )}
