@@ -84,8 +84,8 @@ export default function Chat() {
               </div>
             ) : (
               <div className="w-full flex justify-center pt-32">
-                <h1 className="font-bold text-3xl">
-                  Please use the input filed below ⬇️
+                <h1 className="w-4/5 flex items-center justify-center text-center p-5 font-bold text-3xl">
+                  Hi there! 👋 Please ask any questions to our ChatBot below! 😊️
                 </h1>
               </div>
             )}
