@@ -1,5 +1,10 @@
 import React from "react";
-
+const paragraphStyle = {
+  position: 'fixed',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+};
 export default function VideoInput(props) {
   const { width, height } = props;
 
@@ -18,15 +23,16 @@ export default function VideoInput(props) {
   };
 
   return (
-    <div className="VideoInput">
+    <div style={paragraphStyle}>
+  
       <input
         ref={inputRef}
         className="VideoInput_input"
         type="file"
         onChange={handleFileChange}
-        accept=".mov,.mp4"
+        accept=".mp4"
       />
-      {!source && <button onClick={handleChoose}>Choose</button>}
+      
       {source && (
         <video
           className="VideoInput_video"
@@ -36,7 +42,7 @@ export default function VideoInput(props) {
           src={source}
         />
       )}
-      <div className="VideoInput_footer">{source || "Nothing selectd"}</div>
+      <div className="VideoInput_footer">{source || "Nothing selected"}</div>
     </div>
   );
 }
