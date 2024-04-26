@@ -3,7 +3,7 @@ Checkout our [[https://devpost.com/software/medscribe-vp3qzi][Devpost!]]
 [[./images/home.png]]
 Tired of long doctor's visits? Introducing MedScribe! Answer your post-visit questions in an instant!
 ** What is MedScribe?
-MedScribe revolutionizes the patient experience by enabling patients to chat with recordings of their doctor visits. This allows patients to fully process a doctor's instructions with additional medical knowledge, takes the some of burden off of the doctor's shoulders, and breaks down geographical barriers for rural patients seeking healthcare. As a real doctor who sees, hears, and reads, we utilize the power of multimodal large language models and audio embeddings to process text databases, audio recordings, and image inputs from a patient's visit to get the full picture of a patient's condition.
+MedScribe revolutionizes the patient experience by enabling patients to chat with recordings of their doctor visits. This allows patients to fully process a doctor's instructions with additional medical knowledge, takes some of burden off of the doctor's shoulders, and breaks down geographical barriers for rural patients seeking healthcare. As a real doctor who sees, hears, and reads, we utilize the power of multimodal large language models and audio embeddings to process text databases, audio recordings, and image inputs from a patient's visit to get the full picture of a patient's condition.
 
 ** How to use it?
 [[./images/upload.png]]
