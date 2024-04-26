@@ -14,7 +14,7 @@ Combined with our AI's knowledge of healthcare, you can have a conversation rega
 ** How does it work?
 *** Backend
 [[./images/chatempty.png]]
-We utilize GPT-4 Vision and OpenAI Whisper to embed images, text, and audio clips into our vector databases, which then is used for chatting with our healthcare informed chatbot use retrieval augmented generation (RAG).
+We utilize GPT-4 Vision and OpenAI Whisper to embed images, text, and audio clips into our vector databases, which then is used for chatting with our healthcare-informed chatbot using retrieval augmented generation (RAG).
 
 *** Frontend
 [[./images/laptop.png]]
