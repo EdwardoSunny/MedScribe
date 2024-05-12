@@ -1,5 +1,4 @@
-* MedScribe (LA Hacks 2024)
-Checkout our [[https://devpost.com/software/medscribe-vp3qzi][Devpost!]]
+* MedScribe
 [[./images/home.png]]
 Tired of long doctor's visits? Introducing MedScribe! Answer your post-visit questions in an instant!
 ** What is MedScribe?
